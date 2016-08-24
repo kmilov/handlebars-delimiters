@@ -32,7 +32,7 @@ module.exports = function(Handlebars, delims) {
 
     var match;
     while (match = re.exec(args[0])) {
-      args[0] = args[0].replace(re, '{{' + match[1] + '}}');
+      args[0] = args[0].replace(match[0], '{{' + match[1] + '}}');
     }
     return Handlebars._compile.apply(null, args);
   };
